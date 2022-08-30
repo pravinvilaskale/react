@@ -24,8 +24,8 @@ const App = () => {
   if (!post) return null;
 
   const handleDelete = (id) => {
-    axios.delete(`http://127.0.0.1:8089/Placements/${id}`)
-      .catch((err) => alert(err))
+    axios.delete(`http://127.0.0.1:8089/users/${id}`)
+    window.location.reload()
   }
 
   return (
