@@ -8,25 +8,26 @@ const Table = ({ post, handleDelete }) => {
     const [name, setName] = useState("");
     const [type, setType] = useState("");
     const [password, setPassword] = useState("");
-    const [i, setI] = useState("");
-    const [n, setN] = useState("");
-    const [t, setT] = useState("");
-    const [p, setP] = useState("");
+    
+    // const [i, setI] = useState("");
+    // const [n, setN] = useState("");
+    // const [t, setT] = useState("");
+    // const [p, setP] = useState("");
   
-   const handlePopup = (post) =>{
-     console.log(i," ",n," ",t," ",p);
-     let id = post.id
-     let data = {
-            id: i,
-            name: n,
-            type: t,
-            password: p
-     }
-     axios.put(`http://localhost:8089/users/${id}`,data)
-     .then((response)=>{
-       console.log(response)
-     })
-   }
+//    const handlePopup = (post) =>{
+//      console.log(i," ",n," ",t," ",p);
+//      let id = post.id
+//      let data = {
+//             id: i,
+//             name: n,
+//             type: t,
+//             password: p
+//      }
+//      axios.put(`http://localhost:8089/users/${id}`,data)
+//      .then((response)=>{
+//        console.log(response)
+//      })
+//    }
     const handlePost = () => {
            const data = {
             id: id,
@@ -75,18 +76,19 @@ const Table = ({ post, handleDelete }) => {
                                 <td>{Post.name}</td>
                                 <td>{Post.type}</td>
                                 <td>{Post.password}</td>
-                                <td><Popup trigger={<button className="btn btn-primary">Edit</button>} position="right center">
+                                <td>
+                                <Popup trigger={<button className="btn btn-primary">Edit</button>} position="right center">
                                     <div className='popupmodal'>
                                     <h4 >Upid Data Here</h4>
                                     <label htmlFor="name">Enter a name</label><br />
-                                    <input type="text"  placeholder={Post.name} onChange={(e) => setI(e.target.value)} /><br />
+                                    <input type="text"  placeholder={Post.name}  /><br />
                                     <label htmlFor="name">Enter a id</label><br />
-                                    <input type="text" placeholder={Post.id} onChange={(e) => setN(e.target.value)} /><br />
+                                    <input type="text" placeholder={Post.id}  /><br />
                                     <label htmlFor="name">Enter a type</label><br />
-                                    <input type="text" placeholder={Post.type} onChange={(e) => setT(e.target.value)} /><br />
+                                    <input type="text" placeholder={Post.type}  /><br />
                                     <label htmlFor="name">Enter a password</label><br />
-                                    <input type="text" placeholder={Post.password} onChange={(e) => setP(e.target.value)} /><br />
-                                    <button class="btn btn-primary" onClick={handlePopup(Post)}>Update</button>
+                                    <input type="text" placeholder={Post.password}  /><br />
+                                    <button class="btn btn-primary">Update</button>
                                     </div>
                                 </Popup>
 
