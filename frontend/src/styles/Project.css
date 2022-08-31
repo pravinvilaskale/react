@@ -28,8 +28,12 @@ li a {
     text-decoration: none;
 }
 
+li{
+    border: 1px solid #925812;
+}
+
 li a.active {
-    background-color: blue;
+    background-color: #D99F4F;
     color: white;
 }
 
