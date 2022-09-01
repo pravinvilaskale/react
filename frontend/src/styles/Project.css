@@ -71,7 +71,8 @@ li a:hover:not(.active) {
 }
 
 .gallery {
-    border: 1px solid #ccc;
+    border: 1px solid black;
+    margin:5px;
 }
 
 .gallery:hover {
@@ -160,4 +161,8 @@ select {
 {
     top: 50%!important;
         left: 50%!important;
+}
+
+html {
+    background-color: #E5DCAE;
 }

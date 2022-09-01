@@ -27,17 +27,18 @@ const Placement = ({ ppost, placementDelete }) => {
     const updateData = (id,name, college, date, qualification, year) => {
 
         const data = {
-            name: name,
-            college:college,
-            date:date,
-            qualification:qualification,
-            year:year
+            id:7,
+            name:"pravin",
+            college:"VOGCE",
+            date:"01-jan-22",
+            qualification:"BE",
+            year:2021
         }
         //console.table(data)
-        axios.put(`http://localhost:8089/users/${id}`, data)
+        axios.put(`http://localhost:8089/Placements/7`, data)
             .catch((err) => console.log("Error", err))
 
-        window.location.reload()
+       // window.location.reload()
     }
 
     //console.log(ppost)
@@ -96,7 +97,6 @@ const Placement = ({ ppost, placementDelete }) => {
                                     <input type="text" placeholder={Post.year} onChange={(e) => setYear(e.target.value)} /><br />
                                     <button class="btn btn-primary" onClick={() => updateData(Post.id,name,college,date,qualification,year)}>Update</button>
                                 </Popup>
-
                                 </td>
                                 <td><button className="btn btn-primary" onClick={() => placementDelete(Post.id)}>Delete</button></td>
                             </tr>
