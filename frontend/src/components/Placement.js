@@ -10,6 +10,8 @@ const Placement = ({ ppost, placementDelete }) => {
     const [qualification, setQualification] = useState("");
     const [year, setYear] = useState("");
 
+
+    // Post api
     const handlePost = () => {
         const data = {
             name: name,
@@ -23,26 +25,26 @@ const Placement = ({ ppost, placementDelete }) => {
 
         window.location.reload()
     }
-
-    const updateData = (id,name, college, date, qualification, year) => {
+    // update api
+    const updateData = (id, name, college, date, qualification, year) => {
 
         const data = {
-            id:7,
-            name:"pravin",
-            college:"VOGCE",
-            date:"01-jan-22",
-            qualification:"BE",
-            year:2021
+            id: id,
+            name: name,
+            college: college,
+            date: date,
+            qualification: qualification,
+            year: year
         }
         //console.table(data)
-        axios.put(`http://localhost:8089/Placements/7`, data)
+        axios.put(`http://localhost:8089/Placements/${id}`, data)
             .catch((err) => console.log("Error", err))
 
-       // window.location.reload()
+        window.location.reload()
     }
 
     //console.log(ppost)
-    
+
     return (
         <>
             <div id='form'>
@@ -92,17 +94,17 @@ const Placement = ({ ppost, placementDelete }) => {
                                     <label htmlFor="name">Enter a date</label><br />
                                     <input type="text" placeholder={Post.date} onChange={(e) => setDate(e.target.value)} /><br />
                                     <label htmlFor="name">Enter a qualification</label><br />
-                                    <input type="text" placeholder={Post.qualification} onChange={(e) => setQualification(e.target.value)}  /><br />
+                                    <input type="text" placeholder={Post.qualification} onChange={(e) => setQualification(e.target.value)} /><br />
                                     <label htmlFor="name">Enter a year</label><br />
                                     <input type="text" placeholder={Post.year} onChange={(e) => setYear(e.target.value)} /><br />
-                                    <button class="btn btn-primary" onClick={() => updateData(Post.id,name,college,date,qualification,year)}>Update</button>
+                                    <button class="btn btn-primary" onClick={() => updateData(Post.id, name, college, date, qualification, year)}>Update</button>
                                 </Popup>
                                 </td>
                                 <td><button className="btn btn-primary" onClick={() => placementDelete(Post.id)}>Delete</button></td>
                             </tr>
                         ))}
                     </tbody>
-                    </table>
+                </table>
             </div>
         </>
     )

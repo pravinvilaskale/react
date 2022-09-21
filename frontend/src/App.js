@@ -14,8 +14,11 @@ const App = () => {
 
   const baseURL = "http://127.0.0.1:8089/users"
 
+  // API
   const pbaseURL = "http://127.0.0.1:8089/Placements"
 
+
+  // get api
   const [ppost, setPpost] = useState(null);
   useEffect(() => {
     axios.get(pbaseURL)
@@ -29,8 +32,8 @@ const App = () => {
   useEffect(() => {
     axios.get(baseURL)
       .then((response) => {
-      setPost(response.data);
-    });
+        setPost(response.data);
+      });
   }, []);
 
 
@@ -39,6 +42,7 @@ const App = () => {
     window.location.reload()
   }
 
+  // delete api
   const placementDelete = (id) => {
     axios.delete(`http://127.0.0.1:8089/Placements/${id}`)
     window.location.reload()
@@ -46,6 +50,7 @@ const App = () => {
 
   return (
     <>
+    
       <Router>
         <div className="page">
           <Navbar />

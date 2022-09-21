@@ -6,7 +6,6 @@ body {
 
 div
 {
-    background-color: #E5DCAE;
     padding-bottom: 10px;
 }
 
@@ -165,4 +164,9 @@ select {
 
 html {
     background-color: #E5DCAE;
+}
+
+.btn-success
+{
+
 }

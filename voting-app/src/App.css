@@ -2,20 +2,6 @@
   text-align: center;
 }
 
-body,
-html {
-  font-family: 'Vazir', sans-serif;
-}
-
-.page {
-  display: flex;
-}
-
-.Home {
-  margin-left: 20%;
-
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
